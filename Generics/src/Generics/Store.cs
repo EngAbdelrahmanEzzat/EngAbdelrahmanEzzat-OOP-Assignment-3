@@ -4,7 +4,12 @@ using System.Text;
 
 namespace Generics
 {
-    public class Store<T>
+    public interface IHasId
+    {
+        int Id { get; }
+
+    }
+    public class Store<T> where T : IHasId
     {
         private List<T> items = new List<T>();
 
@@ -22,7 +27,7 @@ namespace Generics
                     return item;
                 }
             }
-            return null;
+            return default;
         }
 
         public void Remove(int id)
