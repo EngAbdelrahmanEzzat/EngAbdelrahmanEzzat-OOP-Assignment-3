@@ -11,31 +11,33 @@ namespace Generics
     }
     public class Store<T> where T : IHasId
     {
-        private List<T> items = new List<T>();
+        private Dictionary<int, T> items = new Dictionary<int, T>();
 
         public void Add(T item)
         {
-            items.Add(item);
+            if(items.ContainsKey(item.Id))
+            {
+                throw new ArgumentException($"An item with Id {item.Id} already exists.");
+            }
+            items[item.Id] = item;
         }
 
         public T? GetById(int id)
         {
-            foreach (var item in items)
+            if (items.TryGetValue(id, out T? item))
             {
-                if (item.Id == id)
-                {
-                    return item;
-                }
+                return item;
             }
+            
             return default;
         }
 
         public void Remove(int id)
         {
-            items.RemoveAll(s => s.Id == id);
+            items.Remove(id);
         }
 
-        public List<T> GetAll()
+        public IReadOnlyDictionary<int, T> GetAll()
         {
             return items;
         }
