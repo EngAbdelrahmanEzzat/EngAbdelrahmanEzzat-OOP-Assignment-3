@@ -5,4 +5,24 @@ Step 2 — A store for courses
 
 
 
+Step 3 — One class for both
+ public T? GetById(int id)
+ {
+     foreach (var item in items)
+     {
+         //if (item.id == id) اول خطا هنا لان ال compile time ميعرفش هل ال T اللي هترجع دي عندها id ولا لا
+         {
+             return item;
+         }
+     }
+     return null;
+ }
+
+ public void Remove(int id)
+ {
+    // items.RemoveAll(s => s.Id == id); وتاني خطا هنا برضو نفس الكلام T اللي في ال list هل عندها id ولا لا
+ }
+
+
+
 
