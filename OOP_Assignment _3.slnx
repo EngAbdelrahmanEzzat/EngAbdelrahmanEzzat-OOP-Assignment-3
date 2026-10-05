@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="Collections/src/src/src.csproj" Id="51c85fb1-e741-480d-af7b-e8d73fed7cf3" />
   <Project Path="OOP_Assignment _3/OOP_Assignment _3.csproj" />
   <Project Path="Refactoring/part-01/part-01/part-01.csproj" />
   <Project Path="Refactoring/part-02/part-02/part-02.csproj" Id="d68b9a36-0020-46bc-bdd4-b3dc4a97f63c" />

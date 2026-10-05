@@ -22,3 +22,16 @@ SortedDictionary: هو زي Dictionary العادي بس الفرق اناه ه�
 time order.
 
 6. A method returns results that the caller only loops over once — and may stop early. (IEnumerable)
+
+
+
+
+Regix: هي أداه بنستخدمها عشان البحث عن انماط في النصوص او التاكد من صحة pattern واستخراج معلومات محدده 
+هديك مثال عليها واشرحلك على المثال ده 
+string phone="01234567890";
+bool isvalid=Regex.Ismatch(phone,@"^01[0125]\d{8}$");
+^ بداية النص
+01 لازم النص يبدا ب 01
+[0125] الرقم الثالث 0او1او2او5
+\d{8} 8 ارقام بعد كده
+$ نهاية النص 
